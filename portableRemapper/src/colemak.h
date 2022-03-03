@@ -63,3 +63,35 @@ const std::unordered_map<DWORD, DWORD> umColemak
 	{N, K},
 	{M, M}
 });
+
+
+const std::unordered_map<DWORD, DWORD>umVKtoHW
+({
+	{Q, 16},
+	{W, 17},
+	{E, 18},
+	{R, 19},
+	{T, 20},
+	{Y, 21},
+	{U, 22},
+	{I, 23},
+	{O, 24},
+	{P, 25},
+	{A, 30},
+	{S, 31},
+	{D, 32},
+	{F, 33},
+	{G, 34},
+	{H, 35},
+	{J, 36},
+	{K, 37},
+	{L, 38},
+	{VK_OEM_1, 39},
+	{Z, 44},
+	{X, 45},
+	{C, 46},
+	{V, 47},
+	{B, 48},
+	{N, 49},
+	{M, 50}
+	});
