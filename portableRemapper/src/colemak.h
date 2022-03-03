@@ -94,4 +94,4 @@ const std::unordered_map<DWORD, DWORD>umVKtoHW
 	{B, 48},
 	{N, 49},
 	{M, 50}
-	});
+});
