@@ -41,8 +41,10 @@ int parseKey(KBDLLHOOKSTRUCT* kbr, WPARAM* wParam)
         {
             std::cout << "[*] Key down" << std::endl;
 
+            DWORD hwKey = umVKtoHW.at(newKey);
+
             rmLLHook(hHook);
-            keybd_event(newKey, 0x1D, KEYEVENTF_EXTENDEDKEY | 0, 0);
+            keybd_event(newKey, hwKey, KEYEVENTF_EXTENDEDKEY | 0, 0);
             hHook = initLLHook();
 
             break;
@@ -51,15 +53,18 @@ int parseKey(KBDLLHOOKSTRUCT* kbr, WPARAM* wParam)
         {
             std::cout << "[*] Key up" << std::endl;
 
+            DWORD hwKey = umVKtoHW.at(newKey);
+
+
             rmLLHook(hHook);
-            keybd_event(newKey, 0x1D, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
+            keybd_event(newKey, hwKey, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
             hHook = initLLHook();
             return 1;
 
             break;
         }
         default:
-            *wParam = WM_SYSKEYDOWN; // if you do not specify it changes back to alt
+            *wParam = WM_KEYDOWN; 
             break;
         }
         return 1;
